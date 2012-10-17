@@ -1,0 +1,7 @@
+%h1 What Does Mitt Mean?
+%p You entered #{@answer.body}
+
+%h2 Some Answers Others Have Given
+%ul
+	- for answer in @answers
+		%li= answer.body
