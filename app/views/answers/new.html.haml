@@ -1,0 +1,6 @@
+%h1 What Does Mitt Mean?
+%p A fun free association game
+
+= form_for @answer do |f|
+	= f.text_field :body, placeholder: 'first thing that comes to mind'
+	= f.submit "Submit"
