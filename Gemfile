@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.8'
 
 gem 'haml'
+gem 'recaptcha', :require => "recaptcha/rails"
 
 group :test, :development do
   gem 'sqlite3'

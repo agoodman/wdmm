@@ -3,7 +3,7 @@ class AnswersController < ApplicationController
   respond_to :html
   
   def index
-    @answers = Answer.order('created_at')
+    @answers = Answer.order('created_at').limit(25)
   end
   
   def new
@@ -12,7 +12,7 @@ class AnswersController < ApplicationController
   
   def create
     @answer = Answer.new(params[:answer])
-    if @answer.save
+    if verify_recaptcha(model: @answer, message: 'Please confirm you are a human') && @answer.save
       redirect_to action: :index
     else
       respond_with(@answer)

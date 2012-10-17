@@ -1,8 +1,13 @@
 %h1 What Does Mitt Mean?
-%p A fun free association game
+%p A fun free association game. Play as many times as you like!
+
+- if flash[:alert]
+	%p.alert= flash[:alert]
 
 = form_for @answer do |f|
-	= f.text_field :body, placeholder: 'first thing that comes to mind'
+	= f.text_field :body, placeholder: 'first thing that comes to mind', size: 40
+	%p Now, please prove you're human
+	= recaptcha_tags
 	= f.submit "Submit"
 
 %p= link_to 'Recent Answers', answers_path
