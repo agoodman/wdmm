@@ -3,7 +3,7 @@ class AnswersController < ApplicationController
   respond_to :html
   
   def index
-    @answers = Answer.order('created_at').limit(25)
+    @answers = Answer.order('created_at desc').limit(25)
   end
   
   def new
