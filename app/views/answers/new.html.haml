@@ -4,3 +4,5 @@
 = form_for @answer do |f|
 	= f.text_field :body, placeholder: 'first thing that comes to mind'
 	= f.submit "Submit"
+
+%p= link_to 'Recent Answers', answers_path
