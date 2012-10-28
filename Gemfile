@@ -4,6 +4,7 @@ gem 'rails', '3.2.8'
 
 gem 'haml'
 gem 'recaptcha', :require => "recaptcha/rails"
+gem 'jqcloud-rails'
 
 group :test, :development do
   gem 'sqlite3'

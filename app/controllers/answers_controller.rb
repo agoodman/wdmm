@@ -23,5 +23,26 @@ class AnswersController < ApplicationController
     @answer = Answer.find(params[:id])
     respond_with(@answer)
   end
+  
+  # GET /answers/word_cloud.js
+  def word_cloud
+    found_words = Set.new
+    word_frequency = Hash.new
+    Answer.find_each do |a|
+      answer_words = a.body.downcase.gsub(/^\w /,'').split(" ")
+      for word in answer_words
+        found_words << word
+        if word_frequency[word]
+          word_frequency[word] = word_frequency[word] + 1
+        else
+          word_frequency[word] = 1
+        end
+      end
+    end
+    @words = word_frequency
+    respond_to do |format|
+      format.js
+    end
+  end
 
 end

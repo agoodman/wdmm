@@ -4,9 +4,49 @@
 
 body {
 	section {
+		#answers, #word_cloud {
+			float: left;
+		}
+		#word_cloud {
+			height: 480px;
+		}
 		input {
 			font-family: Helvetica Neue;
 			font-size: 24pt;
 		}
+	}
+}
+
+@media screen and (max-width: 320px) {
+	body {
+		section {
+			width: 320px;
+		}
+	}
+	#word_cloud {
+		width: 320px;
+		height: 320px;
+	}
+}
+@media screen and (min-width: 321px) and (max-width: 640px) {
+	body {
+		section {
+			width: 640px;
+		}
+	}
+	#word_cloud {
+		width: 640px;
+		height: 640px;
+	}
+}
+@media screen and (min-width: 641px) {
+	body {
+		section {
+			width: 960px;
+		}
+	}
+	#word_cloud {
+		width: 640px;
+		height: 640px;
 	}
 }

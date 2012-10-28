@@ -1,0 +1,9 @@
+var word_array = [
+<% for word in @words.keys -%>
+{text: "<%= word %>", weight: <%= @words[word] %>},
+<% end -%>
+];
+
+$(function() {
+  $("#word_cloud").jQCloud(word_array);
+});

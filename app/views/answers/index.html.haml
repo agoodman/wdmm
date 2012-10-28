@@ -1,6 +1,16 @@
 %h1 What Does Mitt Mean?
-%p Some Answers Others Have Given
+#breadcrumb
+	«
+	= link_to 'Play Now!', root_path
 
-%ul
-	- for answer in @answers
-		%li= answer.body
+#answers
+	%p Some Recent Answers
+
+	%ul
+		- for answer in @answers
+			%li= answer.body
+
+#word_cloud
+
+:javascript
+	$(document).ready(function() { $.getScript('#{word_cloud_answers_path}'); });

@@ -1,6 +1,8 @@
 Wdmm::Application.routes.draw do
 
-  resources :answers
+  resources :answers do
+    collection { get :word_cloud }
+  end
   
   root to: 'answers#new'
   
